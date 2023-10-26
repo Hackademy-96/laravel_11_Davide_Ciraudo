@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 
@@ -15,3 +16,7 @@ use App\Http\Controllers\PublicController;
 */
 
 Route::get('/', [PublicController::class, 'homePage'])->name('homePage');
+
+Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
+
+Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
